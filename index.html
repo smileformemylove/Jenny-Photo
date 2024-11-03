@@ -2,26 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Jenny</title>
-    <link rel="stylesheet" href="src/css/style.css">
+    <title>Jenny Photo</title>
+    <link href="src/css/style.css" rel="stylesheet">
 </head>
+
 <body>
+<header>
+    <h2 class="logo">Jenny Photo</h2>
+    <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
 
-<h1>Create and Manage Albums</h1>
 
-<!-- Вибір альбому -->
-<label for="album-select">Choose or Create an Album:</label>
-<select id="album-select"></select>
-<input type="text" id="new-album-name" placeholder="New album name">
-<button id="create-album">Create Album</button>
+<div class="wrapper">
 
-<!-- Завантаження фото -->
-<input type="file" id="file-input" multiple accept="image/*">
 
-<div id="photo-preview"></div>
-<button id="clear-storage">Clear Album</button>
 
-<script src="src/js/script.js"></script>
+<footer></footer>
+
+
+<script src = "src/js/script.js"></script>
+
 </body>
+
 </html>
