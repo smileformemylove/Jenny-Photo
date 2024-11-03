@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Jenny</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>Create and Manage Albums</h1>
+
+<!-- Вибір альбому -->
+<label for="album-select">Choose or Create an Album:</label>
+<select id="album-select"></select>
+<input type="text" id="new-album-name" placeholder="New album name">
+<button id="create-album">Create Album</button>
+
+<!-- Завантаження фото -->
+<input type="file" id="file-input" multiple accept="image/*">
+
+<div id="photo-preview"></div>
+<button id="clear-storage">Clear Album</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
