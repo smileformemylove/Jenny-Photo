@@ -118,9 +118,9 @@ document.getElementById('album-select').addEventListener('change', function() {
 });
 
 // Очищення альбому
-document.getElementById('clear-storage').addEventListener('click', function() {
-    const storedAlbums = loadAlbumsFromLocalStorage();
-    storedAlbums[currentAlbum] = [];
-    saveAlbumsToLocalStorage(storedAlbums);
-    displayImages([]);
-});
+// document.getElementById('clear-storage').addEventListener('click', function() {
+//     const storedAlbums = loadAlbumsFromLocalStorage();
+//     storedAlbums[currentAlbum] = [];
+//     saveAlbumsToLocalStorage(storedAlbums);
+//     displayImages([]);
+// });
