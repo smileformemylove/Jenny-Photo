@@ -100,11 +100,16 @@ header .navigation{
     transform: scaleX(1);
 }
 
+main{
+    margin-top: 100px;
+}
+
 .portfolio {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin: 50px;
 }
 
 .album {
@@ -118,6 +123,13 @@ header .navigation{
     position: relative;
     box-shadow: 0 0 20px rgba(1, 1, 1, 1.1);
     z-index: 1; /* Задано для управління накладанням альбомів */
+}
+
+.album:hover {
+
+    transform: scale(2); /* Розширення при наведенні */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    z-index: 2; /* Щоб альбом залишався поверх інших під час збільшення */
 }
 
 .album-cover {
