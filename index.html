@@ -6,36 +6,66 @@
     <link href="src/css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="top">
 <header>
     <h2 class="logo">Jenny Photo</h2>
     <nav class="navigation">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="price.html">Price</a>
+        <a href="index.html#top">Home</a>
+        <a href="index.html#portfolio">Portfolio</a>
     </nav>
 </header>
 
 <main>
 
+    <section class="container" id="social-media">
+        <div class="social-media">
+            <div class="invisible">
+                <h3>Мої соціальні мережі:</h3><br>
+                <a href="https://www.instagram.com/yevhenia.ph/" class="instagram-link">
+                    <svg class="instagram-icon" width="35" height="35">
+                        <use xlink:href="./src/css/svg/sprite.svg#instagram"></use>
+                    </svg>yevhenia.ph</a>
+            </div>
+            <div class="invisible2">
+                <a href="https://www.threads.net/@yevhenia.ph?invite=4" class="threads-link">
+                    <svg class="threads-icon" width="35" height="35">
+                        <use xlink:href="./src/css/svg/sprite.svg#threads"></use>
+                    </svg>  Євгенія <svg class="heart-icon" width="30" height="30">
+                    <use xlink:href="./src/css/svg/sprite.svg#heart"></use>
+                </svg></a>
+            </div>
+        </div>
+    </section>
 
-    <div class="invisible">
-        <a href="https://www.instagram.com/yevhenia.ph/" class="instagram-link">
-            <svg class="instagram-icon" width="35" height="35">
-                <use xlink:href="./src/css/svg/sprite.svg#instagram"></use>
-            </svg>yevhenia.ph</a>
-    </div>
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-main">
+
+            <div class="portfolio">
+                <h1>Індивідуальна зйомка <svg class="heart-icon" width="30" height="30">
+                    <use xlink:href="./src/css/svg/sprite.svg#heart"></use></svg>
+                </h1>
+                <div class="gallery">
+                    <img src="./src/img/album1/photo1.jpg" alt="Photo 1">
+                    <img src="./src/img/album1/photo2.jpg" alt="Photo 2">
+                    <img src="./src/img/album1/photo12.jpg" alt="Photo 3">
+                    <img src="./src/img/album1/photo4.jpg" alt="Photo 4">
+                    <img src="./src/img/album1/photo5.jpg" alt="Photo 5">
+                    <img src="./src/img/album1/photo8.jpg" alt="Photo 6">
+                    <img src="./src/img/album1/photo7.jpg" alt="Photo 7">
+                    <img src="./src/img/album1/photo6.jpg" alt="Photo 8">
+                    <img src="./src/img/album1/photo3.jpg" alt="Photo 9">
+                    <img src="./src/img/album1/photo10.jpg" alt="Photo 10">
+                    <img src="./src/img/album1/photo9.jpg" alt="Photo 11">
+                    <img src="./src/img/album1/photo11.jpg" alt="Photo 12">
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-    <div class="invisible2">
-        <a href="https://www.threads.net/@yevhenia.ph?invite=4" class="threads-link">
-            <svg class="threads-icon" width="35" height="35">
-                <use xlink:href="./src/css/svg/sprite.svg#threads"></use>
-            </svg>  Євгенія <svg class="heart-icon" width="30" height="30">
-                                 <use xlink:href="./src/css/svg/sprite.svg#heart"></use>
-                            </svg></a>
-    </div>
 </main>
+
 
 <footer></footer>
 
