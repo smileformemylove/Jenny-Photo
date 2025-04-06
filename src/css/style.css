@@ -1,7 +1,13 @@
-/*@import "reset.css";*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* ------------------------------
+   ІМПОРТ ШРИФТІВ
+------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-*{
+/* ------------------------------
+   ГЛОБАЛЬНІ СТИЛІ
+------------------------------ */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,72 +19,40 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .3)) , url('../img/background.jpg') repeat;
-    background-size: cover;
-
+    overflow: hidden;
+    background: url("../img/background.jpg"), no-repeat;
 }
 
-header{
+/* ------------------------------
+   ШАПКА САЙТУ
+------------------------------ */
+header {
     position: fixed;
     top: 0;
     left: 0;
+    margin: 0 auto;
     width: 100%;
     padding: 20px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
-}
-
-header .navigation{
-    letter-spacing: .2em;
-}
-
-.container {
-    margin: 0 auto;
-    max-width: 700px;
-}
-
-.main-h1 {
-    color: #cccccc;
-    text-align: center;
-}
-
-.form-label {
-    color: deepskyblue;
-    letter-spacing: .1em;
-}
-
-.taskWrapper {
-    background-color: #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 14px 1px rgba(0, 0, 0, .2);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.taskHeading {
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.taskDescription {
-    font-size: 16px;
+    z-index: 15;
 }
 
 .logo {
     font-size: 2em;
-    color: #fff;
+    color: black;
     user-select: none;
 }
 
-.navigation a{
+.navigation a {
     position: relative;
     font-size: 1.1em;
     font-weight: 500;
     margin-left: 40px;
     text-decoration: none;
-    color: #fff;
+    color: black;
+    transition: color 0.3s ease-in-out;
 }
 
 .navigation a::after {
@@ -89,126 +63,191 @@ header .navigation{
     width: 100%;
     height: 3px;
     border-radius: 5px;
-    background: #fff;
+    background:  #E1306C;
     transform-origin: right;
     transform: scaleX(0);
-    transition: transform .3s;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition-delay: 0.1s;
 }
 
-.navigation a:hover::after{
+.navigation a:hover {
+    color:  #E1306C;
+}
+
+.navigation a:hover::after {
     transform-origin: left;
     transform: scaleX(1);
 }
 
-main{
-    margin-top: 100px;
-}
-
-.portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: 50px;
-}
-
-.album {
-    border-radius: 10px;
-    width: 300px;
-    margin: 20px;
-    border: 1px solid #ccc;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 0 20px rgba(1, 1, 1, 1.1);
-    z-index: 1; /* Задано для управління накладанням альбомів */
-}
-
-.album:hover {
-
-    transform: scale(2); /* Розширення при наведенні */
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
-    z-index: 2; /* Щоб альбом залишався поверх інших під час збільшення */
-}
-
-.album-cover {
-    position: relative;
-}
-
-.cover-img {
-    width: 100%;
-    display: block;
-}
-
-.album-title {
-    text-align: center;
+.navigation a.active {
+    color: #E1306C; /* Колір для активної сторінки */
     font-weight: bold;
-    padding: 10px;
-    color: #cccccc;
+    border-bottom: 2px solid #E1306C;
+}
+/* ------------------------------
+   ГОЛОВНИЙ КОНТЕНТ
+------------------------------ */
+.container {
+    margin: 0 auto;
+    max-width: 700px;
 }
 
-/* Стиль для фото-сітки */
-.photo-grid {
-    display: none;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px;
+.main-h1 {
+    color: gainsboro;
+    text-align: center;
+    font-size: 2.5em;
+    animation: fadeIn 2s ease-in-out;
 }
 
-/* Показуємо сітку тільки для альбому, на який навели курсор */
-.album:hover .photo-grid {
-    display: grid;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ------------------------------
+   ФОН ВІДЕО
+------------------------------ */
+.video-background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-background video {
     position: absolute;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+
+/* ------------------------------
+   ПОРТФОЛІО
+------------------------------ */
+
+.portfolio-main {
+    max-width: 1200px;
+    margin: 80px auto;
+}
+
+.portfolio h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+
+.gallery img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* ------------------------------
+   ДОДАТКОВІ ЕЛЕМЕНТИ ЛІНКИ ВНИЗУ
+------------------------------ */
+
+.invisible {
+    position: fixed;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 2;
-}
-
-/* Стилі для зображень у сітці */
-.photo-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-
-.photo-grid img:hover {
-    transform: scale(1.5) translateY(.5em);
-}
-.bottom-img{
+    background: linear-gradient(to left, #f0f0f0, #c0c0c0);
+    width: 27vw;
+    height: 14vh;
+    border-top-right-radius: 50px;
     display: flex;
-    margin-top: 22px;
-    gap: 10px;
-    padding: 10px 0 10px 0;
-}
-.bottom-img img{
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
 }
 
-.bottom-img img:hover {
-    transform: scale(1.5) translateY(-.5em);
+.invisible a,
+.invisible2 a{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 25px;
+    transition: color 0.5s ease;
+}
+
+.invisible a:hover,
+.invisible2 a:hover{
+    color: #E1306C;
+}
+
+.invisible2 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right, #f0f0f0, #c0c0c0);
+    width: 27vw;
+    height: 14vh;
+    border-top-left-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
+.threads-icon,
+.instagram-icon{
+    position: relative;
+    top: 10px;
+    color: #000000;
+    fill: #000000;
+    transition: color 0.5s ease;
+}
 
+.heart-icon {
+    position: relative;
+    top: 5px;
+}
 
+.instagram-link:hover .instagram-icon,
+.threads-link:hover .threads-icon{
+    color: #E1306C;
+    fill: #E1306C;
+}
 
-
-
-
-
-
-
-
-
-
+/* ------------------------------
+   PRICE PAGE
+------------------------------ */
 
 
 

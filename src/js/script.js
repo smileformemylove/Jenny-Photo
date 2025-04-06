@@ -1,13 +1,13 @@
 'use strict';
 
-// const albums = document.querySelectorAll('.album');
-//
-// albums.forEach(album => {
-//     album.addEventListener('mouseenter', () => {
-//         album.querySelector('.photo-grid').style.display = 'grid';
-//     });
-//
-//     album.addEventListener('mouseleave', () => {
-//         album.querySelector('.photo-grid').style.display = 'none';
-//     });
-// });
+
+//ACTIVE CLASS
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".navigation a").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+});
