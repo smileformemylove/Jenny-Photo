@@ -6,7 +6,9 @@
 /* ------------------------------
    ГЛОБАЛЬНІ СТИЛІ
 ------------------------------ */
-
+html {
+    scroll-behavior: smooth;
+}
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +21,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
     background: url("../img/background.jpg"), no-repeat;
 }
 
@@ -32,11 +33,13 @@ header {
     left: 0;
     margin: 0 auto;
     width: 100%;
-    padding: 20px 100px;
+    padding: 5px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 15;
+    background: rgba(165, 165, 165, 0.7);
+
 }
 
 .logo {
@@ -87,10 +90,7 @@ header {
 /* ------------------------------
    ГОЛОВНИЙ КОНТЕНТ
 ------------------------------ */
-.container {
-    margin: 0 auto;
-    max-width: 700px;
-}
+
 
 .main-h1 {
     color: gainsboro;
@@ -99,46 +99,17 @@ header {
     animation: fadeIn 2s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* ------------------------------
-   ФОН ВІДЕО
------------------------------- */
-.video-background {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.video-background video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
-
-
 /* ------------------------------
    ПОРТФОЛІО
 ------------------------------ */
+.portfolio{
+    margin-top: 50px;
+}
+
 
 .portfolio-main {
     max-width: 1200px;
-    margin: 80px auto;
+    margin: 30px auto;
 }
 
 .portfolio h1{
@@ -151,7 +122,7 @@ header {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 30px;
     max-width: 1200px;
@@ -181,24 +152,21 @@ header {
 }
 
 /* ------------------------------
-   ДОДАТКОВІ ЕЛЕМЕНТИ ЛІНКИ ВНИЗУ
+   Social media
 ------------------------------ */
-
-.invisible {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(to left, #f0f0f0, #c0c0c0);
-    width: 27vw;
-    height: 14vh;
-    border-top-right-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.social-media{
+    margin: 150px auto;
+    text-align: center;
 }
 
+.invisible{
+    margin: 20px 0;
+}
+
+
 .invisible a,
-.invisible2 a{
+.invisible2 a,
+.invisible h3{
     text-decoration: none;
     color: black;
     font-weight: 400;
@@ -209,19 +177,6 @@ header {
 .invisible a:hover,
 .invisible2 a:hover{
     color: #E1306C;
-}
-
-.invisible2 {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(to right, #f0f0f0, #c0c0c0);
-    width: 27vw;
-    height: 14vh;
-    border-top-left-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -246,8 +201,82 @@ header {
 }
 
 /* ------------------------------
-   PRICE PAGE
+   ADAPTIVE
 ------------------------------ */
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 100px; /* Відступ для фіксованої шапки */
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 1.8em;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navigation a {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 1.1em;
+    }
+
+    .portfolio h1 {
+        font-size: 30px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px; /* Зменшено для мобільних */
+    }
+}
+
+/* Медіа-запит для мобільних пристроїв до 480px */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.4em;
+    }
+
+    .navigation a {
+        font-size: 1em; /* Зменшено для мобільних */
+        margin-top: 5px;
+    }
+
+    .main-h1 {
+        font-size: 2em;
+    }
+
+    .portfolio h1 {
+        font-size: 25px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery img {
+        border-radius: 5px; /* Зменшено радіус для мобільних */
+    }
+}
 
 
 
